@@ -1,0 +1,49 @@
+{
+  "name": "next-locale-database",
+  "version": "0.1.0",
+  "description": "Get locale string from a string mapping next/router.",
+  "author": "kpwzto",
+  "license": "MIT",
+  "main": "dist/js/index.cjs.js",
+  "module": "dist/js/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "keywords": [
+    "nextjs",
+    "locale",
+    "locale-database",
+    "locale-json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kpwzto/next-locale-database.git"
+  },
+  "scripts": {
+    "build:module": "node ./src/scripts/build-module.js",
+    "build:types": "node ./src/scripts/clean.js && tsc --emitDeclarationOnly",
+    "build:all": "npm run build:module && npm run build:types",
+    "eslint": "eslint src"
+  },
+  "peerDependencies": {
+    "@types/node": "^16.9.4",
+    "lodash": "^4.17.21",
+    "next": ">=11.1.0"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^16.9.4",
+    "lodash": "^4.17.21",
+    "next": "11.1.0",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^11.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "esbuild": "^0.13.4",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.3"
+  }
+}

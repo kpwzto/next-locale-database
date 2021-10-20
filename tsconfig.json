@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es6",
+    "declarationDir": "./dist/types",
+    "declaration": true,
+    "declarationMap": true,
+    "mapRoot": "./",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "removeComments": true,
+    "jsx": "react",
+  },
+  "include": [
+    "src/app/**/*.ts",
+    "src/app/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
