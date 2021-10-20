@@ -128,6 +128,9 @@ function useLocale() {
   const locale = (_a = router.locale) != null ? _a : "en";
   return {
     getLang: (str) => {
+      if (str === void 0) {
+        return "";
+      }
       if (typeof str !== "string") {
         console.warn("next-locale-database: Input is not a string!");
         return "";

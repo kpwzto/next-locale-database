@@ -9,6 +9,9 @@ export default function useLocale(): ILocale {
   const locale = router.locale ?? 'en'
   return {
     getLang: (str: unknown): string => {
+      if (str === undefined) {
+        return ''
+      }
       if (typeof str !== 'string') {
         console.warn('next-locale-database: Input is not a string!')
         return ''
