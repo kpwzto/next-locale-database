@@ -122,7 +122,7 @@ function getLocaleString(str, locale) {
 }
 
 // src/app/index.ts
-function useLocale() {
+function useLocale(options) {
   var _a;
   const router = (0, import_router.useRouter)();
   const locale = (_a = router.locale) != null ? _a : "en";
@@ -136,7 +136,7 @@ function useLocale() {
         return "";
       }
       if (!isJsonString(str) || !isLocaleFormat(str)) {
-        return "";
+        return (options == null ? void 0 : options.revert) === true ? str : "";
       }
       return getLocaleString(str, locale);
     }

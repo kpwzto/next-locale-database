@@ -1,6 +1,9 @@
 interface ILocale {
     getLang: (str: unknown) => string;
 }
-export default function useLocale(): ILocale;
+declare type TOptions = {
+    revert: boolean;
+};
+export default function useLocale(options?: TOptions): ILocale;
 export {};
 //# sourceMappingURL=../../src/app/index.d.ts.map

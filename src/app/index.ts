@@ -4,7 +4,10 @@ import { getLocaleString, isJsonString, isLocaleFormat } from './lib'
 interface ILocale {
   getLang: (str: unknown) => string
 }
-export default function useLocale(): ILocale {
+type TOptions = {
+  revert: boolean
+}
+export default function useLocale(options?: TOptions): ILocale {
   const router = useRouter()
   const locale = router.locale ?? 'en'
   return {
@@ -17,7 +20,7 @@ export default function useLocale(): ILocale {
         return ''
       }
       if (!isJsonString(str) || !isLocaleFormat(str)) {
-        return ''
+        return options?.revert === true ? str : ''
       }
       return getLocaleString(str, locale)
     },
