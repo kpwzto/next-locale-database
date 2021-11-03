@@ -5,11 +5,15 @@ interface ILocale {
   getLang: (str: unknown) => string
 }
 type TOptions = {
-  revert: boolean
+  revert?: boolean
+  forceLang?: string
 }
 export default function useLocale(options?: TOptions): ILocale {
   const router = useRouter()
-  const locale = router.locale ?? 'en'
+  let locale = router.locale ?? 'en'
+  if (options?.forceLang) {
+    locale = options?.forceLang
+  }
   return {
     getLang: (str: unknown): string => {
       if (str === undefined) {

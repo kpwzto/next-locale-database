@@ -125,7 +125,10 @@ function getLocaleString(str, locale) {
 function useLocale(options) {
   var _a;
   const router = (0, import_router.useRouter)();
-  const locale = (_a = router.locale) != null ? _a : "en";
+  let locale = (_a = router.locale) != null ? _a : "en";
+  if (options == null ? void 0 : options.forceLang) {
+    locale = options == null ? void 0 : options.forceLang;
+  }
   return {
     getLang: (str) => {
       if (str === void 0) {
