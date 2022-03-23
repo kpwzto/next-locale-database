@@ -134,6 +134,9 @@ function useLocale(options) {
       if (str === void 0) {
         return "";
       }
+      if (typeof str === "number") {
+        str = str.toString();
+      }
       if (typeof str !== "string") {
         console.warn("next-locale-database: Input is not a string!");
         return "";

@@ -19,6 +19,11 @@ export default function useLocale(options?: TOptions): ILocale {
       if (str === undefined) {
         return ''
       }
+      
+      if (typeof str === 'number') {
+        str = str.toString()
+      }
+
       if (typeof str !== 'string') {
         console.warn('next-locale-database: Input is not a string!')
         return ''
