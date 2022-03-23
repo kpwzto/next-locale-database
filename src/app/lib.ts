@@ -3,6 +3,9 @@ import lodash from 'lodash'
 export function isJsonString(str: string): boolean {
   try {
     JSON.parse(str)
+    if(str.charAt(0) != "[" && str.charAt(0) != "{"){
+      return false
+    }
   } catch (e) {
     console.warn('next-locale-database: Invalid json format!')
     return false

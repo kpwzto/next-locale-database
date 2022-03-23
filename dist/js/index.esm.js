@@ -57,6 +57,9 @@ import lodash from "lodash";
 function isJsonString(str) {
   try {
     JSON.parse(str);
+    if (str.charAt(0) != "[" && str.charAt(0) != "{") {
+      return false;
+    }
   } catch (e) {
     console.warn("next-locale-database: Invalid json format!");
     return false;
@@ -111,6 +114,7 @@ function useLocale(options) {
         console.warn("next-locale-database: Input is not a string!");
         return "";
       }
+      console.log(str, isJsonString(str));
       if (!isJsonString(str) || !isLocaleFormat(str)) {
         return (options == null ? void 0 : options.revert) === true ? str : "";
       }
