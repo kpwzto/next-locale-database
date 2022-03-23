@@ -99,11 +99,8 @@ function useLocale(options) {
   var _a;
   const router = useRouter();
   let locale = (_a = router.locale) != null ? _a : "en";
-  if (options == null ? void 0 : options.forceLang) {
-    locale = options == null ? void 0 : options.forceLang;
-  }
   return {
-    getLang: (str) => {
+    getLang: (str, forceLang) => {
       if (str === void 0) {
         return "";
       }
@@ -116,6 +113,9 @@ function useLocale(options) {
       }
       if (!isJsonString(str) || !isLocaleFormat(str)) {
         return (options == null ? void 0 : options.revert) === true ? str : "";
+      }
+      if (forceLang) {
+        locale = forceLang;
       }
       return getLocaleString(str, locale);
     }

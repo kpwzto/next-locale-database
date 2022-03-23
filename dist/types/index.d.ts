@@ -1,9 +1,8 @@
 interface ILocale {
-    getLang: (str: unknown) => string;
+    getLang: (str: unknown, forceLang?: string) => string;
 }
 declare type TOptions = {
     revert?: boolean;
-    forceLang?: string;
 };
 export default function useLocale(options?: TOptions): ILocale;
 export {};
