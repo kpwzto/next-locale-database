@@ -24,5 +24,11 @@ Get locale string in your component
     { getLang('{"en": "Example", "vi", "Ví dụ"}') }
   </Component>
 ```
+Get locale string in your component with force a language
+```html
+  <Component>
+    { getLang('{"en": "Example", "vi", "Ví dụ"}', 'vi') } // Return: Ví dụ
+  </Component>
+```
 ## License
 MIT license. © kpwzto
