@@ -126,11 +126,11 @@ function getLocaleString(str, locale) {
 
 // src/app/index.ts
 function useLocale(options) {
-  var _a;
   const router = (0, import_router.useRouter)();
-  let locale = (_a = router.locale) != null ? _a : "en";
   return {
     getLang: (str, forceLang) => {
+      var _a;
+      let locale = (_a = router.locale) != null ? _a : "en";
       if (str === void 0) {
         return "";
       }
