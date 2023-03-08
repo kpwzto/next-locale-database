@@ -7,7 +7,6 @@ export function isJsonString(str: string): boolean {
       return false
     }
   } catch (e) {
-    console.warn('next-locale-database: Invalid json format!')
     return false
   }
   return true
@@ -31,7 +30,6 @@ export function isLocaleFormat(str: string): boolean {
 
     return result
   } catch (e) {
-    console.warn('next-locale-database: Invalid locale format!')
     return false
   }
 }
@@ -44,7 +42,6 @@ export function getLocaleString(str: string, locale: string): string {
     }
     return obj[locale]
   } catch (e) {
-    console.warn('next-locale-database: ' + e)
     return ''
   }
 }

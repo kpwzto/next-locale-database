@@ -21,7 +21,6 @@ export default function useLocale(options?: TOptions): ILocale {
       }
 
       if (typeof str !== 'string') {
-        console.warn('next-locale-database: Input is not a string!')
         return ''
       }
 
