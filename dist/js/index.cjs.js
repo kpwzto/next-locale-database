@@ -88,7 +88,6 @@ function isJsonString(str) {
       return false;
     }
   } catch (e) {
-    console.warn("next-locale-database: Invalid json format!");
     return false;
   }
   return true;
@@ -107,7 +106,6 @@ function isLocaleFormat(str) {
     }
     return result;
   } catch (e) {
-    console.warn("next-locale-database: Invalid locale format!");
     return false;
   }
 }
@@ -119,7 +117,6 @@ function getLocaleString(str, locale) {
     }
     return obj[locale];
   } catch (e) {
-    console.warn("next-locale-database: " + e);
     return "";
   }
 }
@@ -138,7 +135,6 @@ function useLocale(options) {
         str = str.toString();
       }
       if (typeof str !== "string") {
-        console.warn("next-locale-database: Input is not a string!");
         return "";
       }
       if (!isJsonString(str) || !isLocaleFormat(str)) {
