@@ -1,6 +1,6 @@
 {
   "name": "next-locale-database",
-  "version": "0.1.5-rc5",
+  "version": "0.1.5-rc6",
   "description": "Get locale string from a string mapping next/router.",
   "author": "kpwzto",
   "license": "MIT",
